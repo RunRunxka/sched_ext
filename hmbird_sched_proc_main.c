@@ -125,6 +125,7 @@ static int hmbird_stats_proc_show(struct seq_file *m, void *v)
     	seq_puts(m, "timeout_cnt:0, 0\n");
     	seq_puts(m, "total_dsp_cnt:0, 0\n");
     	seq_puts(m, "move_rq_cnt:0, 0\n");
+		seq_puts(m, "select_cpu:0, 0\n");
     
     	// Output gdsq_cnt array
     	for (int i = 0; i < 10; i++) {
@@ -140,7 +141,7 @@ static int hmbird_stats_proc_show(struct seq_file *m, void *v)
     
     	// 添加缺失的 pcp_ldsq_cnt 数组输出（索引0-7）
     	for (int i = 0; i < 8; i++) {
-        	seq_printf(m, "pcp_ldsq_cnt[%d]:0, 0\n", i);
+        	seq_printf(m, "pcp_ldsq_cnt[%d]:0,0\n", i);
     	}
     
     	// 添加缺失的 pcp_enql_cnt 数组输出（索引0-7）
